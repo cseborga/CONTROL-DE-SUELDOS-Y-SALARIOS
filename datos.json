@@ -1,0 +1,392 @@
+{
+  "ultimaActualizacion": "2026-10-30T14:42:33.198Z",
+  "credencialesRRHH": {
+    "usuario": "encargado_rrhh",
+    "pass": "Bolivia2026*",
+    "nombre": "Lic. Roberto Méndez",
+    "cargo": "Responsable de Recursos Humanos"
+  },
+  "listaObras": [
+    {
+      "id": "OBRA-00",
+      "nombre": "Oficina Central (Administración & Gerencia)",
+      "tipo": "Administrativa",
+      "ubicacion": "La Paz - Zona Central",
+      "fechaInicio": "2020-01-01",
+      "fechaFin": "",
+      "presupuestoManoObra": 500000,
+      "estado": "Permanente"
+    },
+    {
+      "id": "OBRA-01",
+      "nombre": "Obra Edificio Residencial Las Torres de Calacoto",
+      "tipo": "Edificación Vertical",
+      "ubicacion": "La Paz - Zona Sur (Calacoto)",
+      "fechaInicio": "2025-08-01",
+      "fechaFin": "2026-10-31",
+      "presupuestoManoObra": 350000,
+      "estado": "Concluida"
+    },
+    {
+      "id": "OBRA-02",
+      "nombre": "Obra Puente Vehicular Bicentenario",
+      "tipo": "Infraestructura Vial",
+      "ubicacion": "Cochabamba - Sacaba",
+      "fechaInicio": "2026-02-01",
+      "fechaFin": "",
+      "presupuestoManoObra": 280000,
+      "estado": "En Ejecución"
+    },
+    {
+      "id": "OBRA-03",
+      "nombre": "Obra Condominio Urbanístico Los Tajibos",
+      "tipo": "Urbanización",
+      "ubicacion": "Santa Cruz - Equipetrol Norte",
+      "fechaInicio": "2026-05-15",
+      "fechaFin": "",
+      "presupuestoManoObra": 420000,
+      "estado": "En Ejecución"
+    },
+    {
+      "id": "OBRA-04",
+      "nombre": "Obra Pavimentación y Drenaje Av. Costanera",
+      "tipo": "Vial y Drenaje",
+      "ubicacion": "El Alto - Distrito 4",
+      "fechaInicio": "2026-06-01",
+      "fechaFin": "2026-11-30",
+      "presupuestoManoObra": 190000,
+      "estado": "En Ejecución"
+    }
+  ],
+  "listaPersonal": [
+    {
+      "codigo": "EMP-001",
+      "ci": "4892301 LP",
+      "nombres": "Carlos Alberto Mamani Condori",
+      "cargo": "Gerente General / Representante Legal",
+      "tipoContrato": "Planta",
+      "obra": "Oficina Central (Administración & Gerencia)",
+      "fechaIngreso": "2022-01-15",
+      "fechaRetiro": "",
+      "sueldoBasico": 14500,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-002",
+      "ci": "5928103 SC",
+      "nombres": "María Elena Flores Ramos",
+      "cargo": "Contadora General",
+      "tipoContrato": "Planta",
+      "obra": "Oficina Central (Administración & Gerencia)",
+      "fechaIngreso": "2023-04-01",
+      "fechaRetiro": "",
+      "sueldoBasico": 8200,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-004",
+      "ci": "7482910 LP",
+      "nombres": "Patricia Sofía Vargas Quispe",
+      "cargo": "Encargada de Recursos Humanos",
+      "tipoContrato": "Planta",
+      "obra": "Oficina Central (Administración & Gerencia)",
+      "fechaIngreso": "2026-02-01",
+      "fechaRetiro": "",
+      "sueldoBasico": 6000,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-003",
+      "ci": "6819204 CB",
+      "nombres": "Rodrigo Javier Gutiérrez Silva",
+      "cargo": "Residente de Obra / Ing. Civil",
+      "tipoContrato": "Planta",
+      "obra": "Obra Edificio Residencial Las Torres de Calacoto",
+      "fechaIngreso": "2025-08-10",
+      "fechaRetiro": "2026-10-20",
+      "sueldoBasico": 9500,
+      "estado": "Retirado / Fin Contrato",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-006",
+      "ci": "9182736 OR",
+      "nombres": "Lucía Fernanda Mendoza Calle",
+      "cargo": "Seguridad Industrial & Medio Ambiente (SISO)",
+      "tipoContrato": "Planta",
+      "obra": "Obra Edificio Residencial Las Torres de Calacoto",
+      "fechaIngreso": "2026-07-06",
+      "fechaRetiro": "",
+      "sueldoBasico": 5200,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-007",
+      "ci": "6271928 TJ",
+      "nombres": "Fernando Andrés Choque Aliaga",
+      "cargo": "Topógrafo de Obra",
+      "tipoContrato": "Planta",
+      "obra": "Obra Edificio Residencial Las Torres de Calacoto",
+      "fechaIngreso": "2026-10-14",
+      "fechaRetiro": "",
+      "sueldoBasico": 4800,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-005",
+      "ci": "8392019 SC",
+      "nombres": "Alejandro David Torrico Morales",
+      "cargo": "Ingeniero Estructural de Puente",
+      "tipoContrato": "Consultor en Línea",
+      "obra": "Obra Puente Vehicular Bicentenario",
+      "fechaIngreso": "2026-03-18",
+      "fechaRetiro": "",
+      "sueldoBasico": 8800,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-008",
+      "ci": "7192834 CH",
+      "nombres": "Gabriela Belén Ortiz Paz",
+      "cargo": "Especialista en Control de Calidad de Hormigones",
+      "tipoContrato": "Consultor en Línea",
+      "obra": "Obra Puente Vehicular Bicentenario",
+      "fechaIngreso": "2026-10-26",
+      "fechaRetiro": "",
+      "sueldoBasico": 4200,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    },
+    {
+      "codigo": "EMP-009",
+      "ci": "8291045 PO",
+      "nombres": "Gustavo Adolfo Miranda Ríos",
+      "cargo": "Encargado de Maquinaria Pesada",
+      "tipoContrato": "Planta",
+      "obra": "Obra Condominio Urbanístico Los Tajibos",
+      "fechaIngreso": "2026-11-09",
+      "fechaRetiro": "",
+      "sueldoBasico": 4500,
+      "estado": "Activo",
+      "pin": "12345",
+      "anticipo1": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      },
+      "anticipo2": {
+        "activo": false,
+        "tipo": "monto",
+        "valor": 0
+      }
+    }
+  ],
+  "listaPermisos": [
+    {
+      "correlativo": "PER-ML-2026-0012",
+      "ci": "5928103 SC",
+      "nombres": "María Elena Flores Ramos",
+      "cargo": "Contadora General",
+      "obra": "Oficina Central (Administración & Gerencia)",
+      "fecha": "2026-10-15",
+      "hora": "08:30",
+      "duracion": "4 Horas",
+      "tipo": "Atención Médica CNS (Con Goce)",
+      "motivo": "Consulta médica programada en el Policlínico de la Caja Nacional de Salud y entrega de certificación de baja.",
+      "estado": "Autorizada",
+      "autorizadoPor": "Lic. Roberto Méndez (Jefe de RRHH)",
+      "fechaAutorizacion": "14/10/2026 16:45",
+      "observacionRRHH": "Autorizado con goce de haberes por citación médica CNS."
+    },
+    {
+      "correlativo": "PER-ML-2026-0013",
+      "ci": "6271928 TJ",
+      "nombres": "Fernando Andrés Choque Aliaga",
+      "cargo": "Topógrafo de Obra",
+      "obra": "Obra Edificio Residencial Las Torres de Calacoto",
+      "fecha": "2026-10-16",
+      "hora": "14:00",
+      "duracion": "3 Horas",
+      "tipo": "Comisión Oficial de Obra (Con Goce)",
+      "motivo": "Calibración y verificación de estación total en laboratorio geodésico.",
+      "estado": "Autorizada",
+      "autorizadoPor": "Lic. Roberto Méndez (Jefe de RRHH)",
+      "fechaAutorizacion": "15/10/2026 11:20",
+      "observacionRRHH": "Comisión oficial justificada por el Residente de Obra."
+    },
+    {
+      "correlativo": "PER-ML-2026-0014",
+      "ci": "8392019 SC",
+      "nombres": "Alejandro David Torrico Morales",
+      "cargo": "Ingeniero Estructural de Puente",
+      "obra": "Obra Puente Vehicular Bicentenario",
+      "fecha": "2026-10-19",
+      "hora": "09:00",
+      "duracion": "2 Horas",
+      "tipo": "Trámite Personal Particular (Sin Goce)",
+      "motivo": "Trámite notarial personal urgente en ciudad de Cochabamba.",
+      "estado": "Pendiente",
+      "autorizadoPor": "",
+      "fechaAutorizacion": "",
+      "observacionRRHH": "En espera de revisión por RRHH."
+    }
+  ],
+  "listaSanciones": [
+    {
+      "id": "SANC-001",
+      "correlativoMemo": "MEM-RRHH-ML-2026-003",
+      "ci": "5928103 SC",
+      "fecha": "2026-10-08",
+      "tipo": "Falta Injustificada a Obra",
+      "dias": 1,
+      "motivo": "Ausencia injustificada de jornada completa a cierre de caja sin aviso previo."
+    },
+    {
+      "id": "SANC-002",
+      "correlativoMemo": "MEM-RRHH-ML-2026-004",
+      "ci": "8392019 SC",
+      "fecha": "2026-10-12",
+      "tipo": "Negligencia Laboral en Ejecución",
+      "dias": 2,
+      "motivo": "Negligencia e inasistencia técnica durante el vaciado de losa estructural en el estribo norte del puente."
+    }
+  ],
+  "programacionVacaciones": [
+    {
+      "codigoEmp": "EMP-001",
+      "fechaSalida": "2026-11-02",
+      "fechaRetorno": "2026-11-13",
+      "dias": 10
+    },
+    {
+      "codigoEmp": "EMP-002",
+      "fechaSalida": "2026-11-16",
+      "fechaRetorno": "2026-11-20",
+      "dias": 5
+    },
+    {
+      "codigoEmp": "EMP-006",
+      "fechaSalida": "2026-11-16",
+      "fechaRetorno": "2026-11-20",
+      "dias": 5
+    }
+  ],
+  "listaFeriados": [
+    { "id": "FER-01", "fecha": "2026-01-01", "nombre": "Año Nuevo", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-02", "fecha": "2026-01-22", "nombre": "Día del Estado Plurinacional de Bolivia", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-03", "fecha": "2026-02-10", "nombre": "Efeméride Departamental de Oruro", "tipo": "Departamental", "departamento": "ORURO", "esModificable": true },
+    { "id": "FER-04", "fecha": "2026-02-16", "nombre": "Lunes de Carnaval", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-05", "fecha": "2026-02-17", "nombre": "Martes de Carnaval", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-06", "fecha": "2026-04-03", "nombre": "Viernes Santo", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-07", "fecha": "2026-04-15", "nombre": "Efeméride Departamental de Tarija", "tipo": "Departamental", "departamento": "TARIJA", "esModificable": true },
+    { "id": "FER-08", "fecha": "2026-05-01", "nombre": "Día del Trabajo", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-09", "fecha": "2026-05-25", "nombre": "Primer Grito Libertario (Chuquisaca)", "tipo": "Departamental", "departamento": "CHUQUISACA", "esModificable": true },
+    { "id": "FER-10", "fecha": "2026-06-04", "nombre": "Corpus Christi", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-11", "fecha": "2026-06-22", "nombre": "Año Nuevo Aymara Amazónico (Compensado lunes D.S. 1420)", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-12", "fecha": "2026-07-16", "nombre": "Revolución de Julio (La Paz)", "tipo": "Departamental", "departamento": "LA PAZ", "esModificable": true },
+    { "id": "FER-13", "fecha": "2026-08-06", "nombre": "Día de la Independencia de Bolivia", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-14", "fecha": "2026-09-14", "nombre": "Efeméride Departamental de Cochabamba", "tipo": "Departamental", "departamento": "COCHABAMBA", "esModificable": true },
+    { "id": "FER-15", "fecha": "2026-09-24", "nombre": "Gesta Libertaria de Santa Cruz", "tipo": "Departamental", "departamento": "SANTA CRUZ", "esModificable": true },
+    { "id": "FER-16", "fecha": "2026-09-24", "nombre": "Creación del Departamento de Pando", "tipo": "Departamental", "departamento": "PANDO", "esModificable": true },
+    { "id": "FER-17", "fecha": "2026-11-02", "nombre": "Día de Todos los Santos", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
+    { "id": "FER-18", "fecha": "2026-11-10", "nombre": "Gesta Libertaria de Potosí", "tipo": "Departamental", "departamento": "POTOSI", "esModificable": true },
+    { "id": "FER-19", "fecha": "2026-11-18", "nombre": "Creación del Departamento del Beni", "tipo": "Departamental", "departamento": "BENI", "esModificable": true },
+    { "id": "FER-20", "fecha": "2026-12-25", "nombre": "Navidad", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true }
+  ],
+  "reglasAnticiposProyecto": {
+    "ant1Activo": false,
+    "ant1Tipo": "porcentaje",
+    "ant1Valor": 30,
+    "ant2Activo": false,
+    "ant2Tipo": "porcentaje",
+    "ant2Valor": 30
+  },
+  "feriadosDecretados": [],
+  "configAnticipos": {}
+}

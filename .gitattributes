@@ -1,0 +1,15 @@
+# Manejo de finales de línea entre Windows y Linux (Cloud)
+* text=auto eol=lf
+
+# Archivos de Windows / Scripts batch
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Archivos binarios que no deben sufrir conversión de fin de línea
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.xlsx binary
+*.docx binary
+*.pdf binary

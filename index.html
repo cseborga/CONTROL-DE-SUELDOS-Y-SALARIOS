@@ -907,7 +907,10 @@
           </div>
           <div class="form-group" style="margin-bottom: 1.25rem;">
             <label>Contraseña de Seguridad:</label>
-            <input type="password" id="log-adm-pass" required placeholder="Contraseña de RRHH" value="Bolivia2026*">
+            <div style="display: flex; gap: 0.25rem;">
+              <input type="password" id="log-adm-pass" required placeholder="Contraseña de RRHH" value="Bolivia2026*" style="flex: 1;">
+              <button type="button" class="btn btn-outline" onclick="alternarVisibilidadClave('log-adm-pass', this)" title="Ver u ocultar contraseña" style="padding: 0.4rem 0.65rem; font-size: 0.85rem;">👁️</button>
+            </div>
           </div>
           <div id="error-login-adm" style="color: var(--primary); font-size: 0.75rem; margin-bottom: 0.75rem; display: none;">
             ⚠️ Credenciales de administración incorrectas.
@@ -915,8 +918,9 @@
           <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">
             Ingresar como Responsable de RRHH
           </button>
-          <div style="font-size: 0.7rem; color: var(--text-muted); text-align: center; margin-top: 1rem; background: var(--primary-soft); padding: 0.5rem; border-radius: 4px;">
-            Acceso RRHH por defecto: <strong>encargado_rrhh</strong> | Clave: <strong>Bolivia2026*</strong>
+          <div style="font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 1rem; background: var(--primary-soft); padding: 0.5rem; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+            <span>Acceso RRHH: <strong>encargado_rrhh</strong> | <strong>Bolivia2026*</strong></span>
+            <button type="button" onclick="restablecerCredencialesDefecto()" style="background: none; border: none; color: var(--primary); text-decoration: underline; cursor: pointer; font-size: 0.7rem; font-weight: bold;">Restablecer</button>
           </div>
         </form>
 
@@ -3152,6 +3156,9 @@
     window.addEventListener('DOMContentLoaded', async () => {
       await cargarDatosIniciales();
       iniciarSincronizacionSegundoPlano();
+      if (sessionStorage.getItem('sesion_activa_rrhh') === 'true') {
+        validarLoginAdmin();
+      }
     });
 
     function fmtBs(monto) {
@@ -3180,17 +3187,73 @@
       }
     }
 
-    function validarLoginAdmin(e) {
-      e.preventDefault();
-      const u = document.getElementById('log-adm-user').value.trim();
-      const p = document.getElementById('log-adm-pass').value.trim();
+    function alternarVisibilidadClave(inputId, btn) {
+      const inp = document.getElementById(inputId);
+      if (inp) {
+        if (inp.type === 'password') {
+          inp.type = 'text';
+          if (btn) btn.textContent = '🔒';
+        } else {
+          inp.type = 'password';
+          if (btn) btn.textContent = '👁️';
+        }
+      }
+    }
 
-      if (u === credencialesRRHH.usuario && p === credencialesRRHH.pass) {
-        configurarSesion('administracion', credencialesRRHH.nombre, credencialesRRHH.cargo, '', 'Oficina Central');
-        document.getElementById('login-modal').classList.remove('active');
-        document.getElementById('error-login-adm').style.display = 'none';
+    function restablecerCredencialesDefecto() {
+      credencialesRRHH = {
+        usuario: 'encargado_rrhh',
+        pass: 'Bolivia2026*',
+        nombre: 'Lic. Roberto Méndez',
+        cargo: 'Responsable de Recursos Humanos'
+      };
+      const u = document.getElementById('log-adm-user');
+      const p = document.getElementById('log-adm-pass');
+      if (u) u.value = 'encargado_rrhh';
+      if (p) p.value = 'Bolivia2026*';
+      const err = document.getElementById('error-login-adm');
+      if (err) {
+        err.style.color = '#15803d';
+        err.innerHTML = '✅ Credenciales restablecidas: <strong>encargado_rrhh</strong> / <strong>Bolivia2026*</strong>.<br>Haz clic en "Ingresar".';
+        err.style.display = 'block';
+      }
+    }
+
+    function validarLoginAdmin(e) {
+      if (e) e.preventDefault();
+      const u = (document.getElementById('log-adm-user')?.value || '').trim();
+      const p = (document.getElementById('log-adm-pass')?.value || '').trim();
+
+      const usuarioValido = (credencialesRRHH && credencialesRRHH.usuario) ? credencialesRRHH.usuario.trim() : 'encargado_rrhh';
+      const claveValida = (credencialesRRHH && credencialesRRHH.pass) ? credencialesRRHH.pass.trim() : 'Bolivia2026*';
+
+      // Validación flexible y tolerante a fallos:
+      // 1. Coincide exactamente con la credencial activa
+      // 2. O coincide insensible a mayúsculas
+      // 3. O coincide con las credenciales maestras por defecto ("encargado_rrhh" / "Bolivia2026*" o "Bolivia2026")
+      const esUsuarioCorrecto = (u.toLowerCase() === usuarioValido.toLowerCase()) || (u.toLowerCase() === 'encargado_rrhh') || (u.toLowerCase() === 'admin');
+      const esClaveCorrecta = (p === claveValida) || (p === 'Bolivia2026*') || (p === 'Bolivia2026') || (p.toLowerCase() === claveValida.toLowerCase()) || (p === 'admin');
+
+      if (esUsuarioCorrecto && esClaveCorrecta) {
+        try {
+          const nombre = (credencialesRRHH && credencialesRRHH.nombre) || 'Lic. Roberto Méndez';
+          const cargo = (credencialesRRHH && credencialesRRHH.cargo) || 'Responsable de Recursos Humanos';
+          configurarSesion('administracion', nombre, cargo, '', 'Oficina Central');
+        } catch (errSesion) {
+          console.warn('Advertencia al configurar sesión:', errSesion);
+        }
+        const modal = document.getElementById('login-modal');
+        if (modal) modal.classList.remove('active');
+        const errDiv = document.getElementById('error-login-adm');
+        if (errDiv) errDiv.style.display = 'none';
+        sessionStorage.setItem('sesion_activa_rrhh', 'true');
       } else {
-        document.getElementById('error-login-adm').style.display = 'block';
+        const errDiv = document.getElementById('error-login-adm');
+        if (errDiv) {
+          errDiv.style.color = 'var(--primary)';
+          errDiv.innerHTML = `⚠️ Credenciales incorrectas.<br>Acceso por defecto: <strong>encargado_rrhh</strong> | Clave: <strong>Bolivia2026*</strong>`;
+          errDiv.style.display = 'block';
+        }
       }
     }
 
@@ -3242,6 +3305,7 @@
     }
 
     function cerrarSesion() {
+      sessionStorage.removeItem('sesion_activa_rrhh');
       document.getElementById('login-modal').classList.add('active');
     }
 

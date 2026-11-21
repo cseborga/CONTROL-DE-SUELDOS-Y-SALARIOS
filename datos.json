@@ -1,5 +1,5 @@
 {
-  "ultimaActualizacion": "2026-10-30T14:42:33.198Z",
+  "ultimaActualizacion": "2026-11-21T13:22:07.897Z",
   "credencialesRRHH": {
     "usuario": "encargado_rrhh",
     "pass": "Bolivia2026*",
@@ -358,26 +358,166 @@
     }
   ],
   "listaFeriados": [
-    { "id": "FER-01", "fecha": "2026-01-01", "nombre": "Año Nuevo", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-02", "fecha": "2026-01-22", "nombre": "Día del Estado Plurinacional de Bolivia", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-03", "fecha": "2026-02-10", "nombre": "Efeméride Departamental de Oruro", "tipo": "Departamental", "departamento": "ORURO", "esModificable": true },
-    { "id": "FER-04", "fecha": "2026-02-16", "nombre": "Lunes de Carnaval", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-05", "fecha": "2026-02-17", "nombre": "Martes de Carnaval", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-06", "fecha": "2026-04-03", "nombre": "Viernes Santo", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-07", "fecha": "2026-04-15", "nombre": "Efeméride Departamental de Tarija", "tipo": "Departamental", "departamento": "TARIJA", "esModificable": true },
-    { "id": "FER-08", "fecha": "2026-05-01", "nombre": "Día del Trabajo", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-09", "fecha": "2026-05-25", "nombre": "Primer Grito Libertario (Chuquisaca)", "tipo": "Departamental", "departamento": "CHUQUISACA", "esModificable": true },
-    { "id": "FER-10", "fecha": "2026-06-04", "nombre": "Corpus Christi", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-11", "fecha": "2026-06-22", "nombre": "Año Nuevo Aymara Amazónico (Compensado lunes D.S. 1420)", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-12", "fecha": "2026-07-16", "nombre": "Revolución de Julio (La Paz)", "tipo": "Departamental", "departamento": "LA PAZ", "esModificable": true },
-    { "id": "FER-13", "fecha": "2026-08-06", "nombre": "Día de la Independencia de Bolivia", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-14", "fecha": "2026-09-14", "nombre": "Efeméride Departamental de Cochabamba", "tipo": "Departamental", "departamento": "COCHABAMBA", "esModificable": true },
-    { "id": "FER-15", "fecha": "2026-09-24", "nombre": "Gesta Libertaria de Santa Cruz", "tipo": "Departamental", "departamento": "SANTA CRUZ", "esModificable": true },
-    { "id": "FER-16", "fecha": "2026-09-24", "nombre": "Creación del Departamento de Pando", "tipo": "Departamental", "departamento": "PANDO", "esModificable": true },
-    { "id": "FER-17", "fecha": "2026-11-02", "nombre": "Día de Todos los Santos", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true },
-    { "id": "FER-18", "fecha": "2026-11-10", "nombre": "Gesta Libertaria de Potosí", "tipo": "Departamental", "departamento": "POTOSI", "esModificable": true },
-    { "id": "FER-19", "fecha": "2026-11-18", "nombre": "Creación del Departamento del Beni", "tipo": "Departamental", "departamento": "BENI", "esModificable": true },
-    { "id": "FER-20", "fecha": "2026-12-25", "nombre": "Navidad", "tipo": "Nacional", "departamento": "TODOS", "esModificable": true }
+    {
+      "id": "FER-01",
+      "fecha": "2026-01-01",
+      "nombre": "Año Nuevo",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-02",
+      "fecha": "2026-01-22",
+      "nombre": "Día del Estado Plurinacional de Bolivia",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-03",
+      "fecha": "2026-02-10",
+      "nombre": "Efeméride Departamental de Oruro",
+      "tipo": "Departamental",
+      "departamento": "ORURO",
+      "esModificable": true
+    },
+    {
+      "id": "FER-04",
+      "fecha": "2026-02-16",
+      "nombre": "Lunes de Carnaval",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-05",
+      "fecha": "2026-02-17",
+      "nombre": "Martes de Carnaval",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-06",
+      "fecha": "2026-04-03",
+      "nombre": "Viernes Santo",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-07",
+      "fecha": "2026-04-15",
+      "nombre": "Efeméride Departamental de Tarija",
+      "tipo": "Departamental",
+      "departamento": "TARIJA",
+      "esModificable": true
+    },
+    {
+      "id": "FER-08",
+      "fecha": "2026-05-01",
+      "nombre": "Día del Trabajo",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-09",
+      "fecha": "2026-05-25",
+      "nombre": "Primer Grito Libertario (Chuquisaca)",
+      "tipo": "Departamental",
+      "departamento": "CHUQUISACA",
+      "esModificable": true
+    },
+    {
+      "id": "FER-10",
+      "fecha": "2026-06-04",
+      "nombre": "Corpus Christi",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-11",
+      "fecha": "2026-06-22",
+      "nombre": "Año Nuevo Aymara Amazónico (Compensado lunes D.S. 1420)",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-12",
+      "fecha": "2026-07-16",
+      "nombre": "Revolución de Julio (La Paz)",
+      "tipo": "Departamental",
+      "departamento": "LA PAZ",
+      "esModificable": true
+    },
+    {
+      "id": "FER-13",
+      "fecha": "2026-08-06",
+      "nombre": "Día de la Independencia de Bolivia",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-14",
+      "fecha": "2026-09-14",
+      "nombre": "Efeméride Departamental de Cochabamba",
+      "tipo": "Departamental",
+      "departamento": "COCHABAMBA",
+      "esModificable": true
+    },
+    {
+      "id": "FER-15",
+      "fecha": "2026-09-24",
+      "nombre": "Gesta Libertaria de Santa Cruz",
+      "tipo": "Departamental",
+      "departamento": "SANTA CRUZ",
+      "esModificable": true
+    },
+    {
+      "id": "FER-16",
+      "fecha": "2026-09-24",
+      "nombre": "Creación del Departamento de Pando",
+      "tipo": "Departamental",
+      "departamento": "PANDO",
+      "esModificable": true
+    },
+    {
+      "id": "FER-17",
+      "fecha": "2026-11-02",
+      "nombre": "Día de Todos los Santos",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    },
+    {
+      "id": "FER-18",
+      "fecha": "2026-11-10",
+      "nombre": "Gesta Libertaria de Potosí",
+      "tipo": "Departamental",
+      "departamento": "POTOSI",
+      "esModificable": true
+    },
+    {
+      "id": "FER-19",
+      "fecha": "2026-11-18",
+      "nombre": "Creación del Departamento del Beni",
+      "tipo": "Departamental",
+      "departamento": "BENI",
+      "esModificable": true
+    },
+    {
+      "id": "FER-20",
+      "fecha": "2026-12-25",
+      "nombre": "Navidad",
+      "tipo": "Nacional",
+      "departamento": "TODOS",
+      "esModificable": true
+    }
   ],
   "reglasAnticiposProyecto": {
     "ant1Activo": false,

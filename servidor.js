@@ -5,6 +5,7 @@ const os = require('os');
 
 const PORT = process.env.PORT || 3000;
 const DIR_ACTUAL = __dirname;
+const FRONTEND_DIR = path.join(__dirname, '..', 'frontend');
 const ARCHIVO_DATOS = path.join(DIR_ACTUAL, 'datos.json');
 
 // MIME types para archivos estáticos
@@ -376,6 +377,63 @@ const server = http.createServer((req, res) => {
 
   // ENDPOINT: Obtener datos centralizados
   if (req.method === 'GET' && pathname === '/api/datos') {
+      try {
+        const datos = obtenerODefinirDatosIniciales();
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify(datos));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+      return;
+    }
+    // ENDPOINT: Exportar a Excel (sin fórmulas) usando exceljs
+    if (req.method === 'GET' && pathname === '/exportar') {
+      try {
+        const ExcelJS = require('exceljs');
+        const workbook = new ExcelJS.Workbook();
+        const sheet = workbook.addWorksheet('Datos');
+        sheet.columns = [
+          { header: 'Código', key: 'codigo', width: 12 },
+          { header: 'Nombre', key: 'nombres', width: 30 },
+          { header: 'Cargo', key: 'cargo', width: 25 },
+          { header: 'Obra', key: 'obra', width: 30 },
+          { header: 'Sueldo Básico', key: 'sueldoBasico', width: 15 },
+          { header: 'Estado', key: 'estado', width: 12 }
+        ];
+        const datos = JSON.parse(require('fs').readFileSync(ARCHIVO_DATOS, 'utf8'));
+        if (Array.isArray(datos.listaPersonal)) {
+          datos.listaPersonal.forEach(p => sheet.addRow(p));
+        }
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.setHeader('Content-Disposition', 'attachment; filename="planilla_sueldos.xlsx"');
+        await workbook.xlsx.write(res);
+        res.end();
+      } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: e.message }));
+      }
+      return;
+    }
+    // ENDPOINT: Exportar a CSV (sin formato)
+    if (req.method === 'GET' && pathname === '/exportar-csv') {
+      try {
+        const datos = JSON.parse(require('fs').readFileSync(ARCHIVO_DATOS, 'utf8'));
+        const rows = [];
+        rows.push(['Código','Nombre','Cargo','Obra','Sueldo Básico','Estado']);
+        if (Array.isArray(datos.listaPersonal)) {
+          datos.listaPersonal.forEach(p => rows.push([p.codigo,p.nombres,p.cargo,p.obra,p.sueldoBasico,p.estado]));
+        }
+        const csv = rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+        res.setHeader('Content-Type','text/csv');
+        res.setHeader('Content-Disposition','attachment; filename="planilla_sueldos.csv"');
+        res.end(csv);
+      } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: e.message }));
+      }
+      return;
+    }
     try {
       const datos = obtenerODefinirDatosIniciales();
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -425,7 +483,7 @@ const server = http.createServer((req, res) => {
   }
 
   // SERVIR ARCHIVOS ESTÁTICOS
-  let filePath = path.join(DIR_ACTUAL, pathname === '/' ? 'index.html' : pathname);
+  let filePath = path.join(FRONTEND_DIR, pathname === '/' ? 'index.html' : pathname);
 
   // Seguridad: evitar directory traversal
   if (!filePath.startsWith(DIR_ACTUAL)) {
@@ -443,7 +501,7 @@ const server = http.createServer((req, res) => {
     stream.pipe(res);
   } else {
     // Si no existe, servir index.html
-    const fallback = path.join(DIR_ACTUAL, 'index.html');
+    const fallback = path.join(FRONTEND_DIR, 'index.html');
     if (fs.existsSync(fallback)) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       fs.createReadStream(fallback).pipe(res);

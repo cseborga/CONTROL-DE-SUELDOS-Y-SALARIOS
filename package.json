@@ -4,6 +4,12 @@
   "description": "Aplicación de gestión de nóminas y obras con arquitectura MVC",
   "main": "backend/servidor.js",
   "scripts": {
+    "start": "node src/backend/server.js",
+    "dev": "nodemon src/backend/server.js",
+    "build-css": "sass frontend/styles.scss frontend/styles.css",
+    "test": "jest",
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write ."
     "start": "node backend/servidor.js",
     "dev": "nodemon backend/servidor.js",
     "build-css": "sass frontend/styles.scss frontend/styles.css",

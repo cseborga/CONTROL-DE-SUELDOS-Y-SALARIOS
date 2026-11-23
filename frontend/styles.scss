@@ -1,0 +1,30 @@
+// SASS variables for corporate colors
+$primary: #b91c1c;
+$primary-dark: #7f1d1d;
+$bg-body: #fafafa;
+$bg-card: #ffffff;
+$text-main: #18181b;
+
+// Light theme
+body {
+  background-color: $bg-body;
+  color: $text-main;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+  background: linear-gradient(135deg, $primary-dark 0%, $primary 65%, lighten($primary, 10%) 100%);
+}
+
+// Dark theme (prefers-color-scheme)
+@media (prefers-color-scheme: dark) {
+  $primary: #ff6b6b;
+  $bg-body: #1a1a1a;
+  $text-main: #e5e5e5;
+  body { background-color: $bg-body; color: $text-main; }
+}
+
+// Responsive layout
+@media (max-width: 768px) {
+  .header-container { flex-direction: column; align-items: flex-start; }
+}
